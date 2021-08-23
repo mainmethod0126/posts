@@ -27,5 +27,11 @@ TermsAggregationBuilder 이용하여 Terms 집계를 사용할 경우
 6.X 이하 버전때 처럼 경고만 띄우고 에러는 발생하지 않게 하는 방법을 찾던 중
 
 https://github.com/grafana/grafana/issues/17327 주소에서 
-아래 사진과 같은 글을 발견하고 그대로 적용하기로 하였습니다.
+아래 사진과 같은 글을 발견하고 적용하기로 하였습니다.
+
+위 사진에서는 REST API 를 통하여 설정을 변경하였지만
+
+저는 elasticsearch.yml 을 직접 수정하여
+
+search.max_buckets: 2147483647 내용을 추가하여 적용하였습니다.
 
