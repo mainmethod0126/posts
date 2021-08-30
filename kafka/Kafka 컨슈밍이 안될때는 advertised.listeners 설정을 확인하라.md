@@ -3,7 +3,7 @@
 </br>
 
 # 일단 결론
-원인은 kafka server.properties의 내용중 advertised.listeners 라는 녀석이 advertised.listeners==PLAINTEXT://11.22.33.123:9092
+원인은 kafka server.properties의 내용중 advertised.listeners 라는 녀석을 advertised.listeners==PLAINTEXT://11.22.33.123:9092
 과 같이 IP를 명시하였더니 컨슘에 성공하였습니다 그렇다면 이 설정이 뭐길래 외부에서 컨슘하는걸 가능하게 할까요?
 
 </br>
