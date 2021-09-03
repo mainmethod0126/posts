@@ -18,12 +18,12 @@ listeners 와 advertised.listeners 입니다.
 
 </br>
 
-#### listeners
+## listeners
 카프카 브로커가 내부적으로 바인딩하는 주소
 
 </br>
 
-#### advertised.listeners
+## advertised.listeners
 카프카 프로듀서, 컨슈머에게 노출할 주소. 설정하지 않을 경우 디폴트로 listeners 설정을 따른다.
 
 </br>
@@ -33,6 +33,7 @@ listeners 와 advertised.listeners 입니다.
 
 </br>
 
+# listeners 와 advertised.listeners 가 별도로 존재하는 이유
 만약 우리의 Kafka 서버가 3개의 랜카드를 장착중이고 A,B,C 라는 IP를 각각 부여 받아 사용중이고,
 해당 서버에는 Kafka 서비스와, 그 Kafka의 Topic을 구독중인 별도의 Test라는 서비스가 실행중이라고 생각해봅시다.
 우리의 Test 서비스는 Kafka 서비스와 같은 PC에서 구동중이기에 localhost 또는 127.0.0.1 이라는 주소로 kafka에 접근이 가능합니다.
@@ -62,4 +63,5 @@ advertised.listeners==PLAINTEXT://B:9092
 
 </br>
 
-
+# 끝으로
+내용이 부실합니다.. 포스팅에 문제가 있거나 제가 잘못알고 있는 내용이 있다면 언제든지 답글 남겨주시면 정말 감사하겠습니다!
