@@ -1,0 +1,58 @@
+Gradle 프로젝트를 진행하면서 의존성 추가 시 version이 명시된 예와, version이 명시되지않은 예 들이 종종 발견되어 둘의 차이를 확인하고자 글을 남깁니다.
+
+</br>
+
+# version 명시의 예
+
+```groovy
+dependencies {
+	implementation 'org.mariadb.jdbc:mariadb-java-client'
+}
+```
+
+# version 생략의 예
+
+```groovy
+dependencies {
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.4'
+}
+```
+</br>
+
+## 차이점
+version 생략 시 자신이 선택한 **저장소** 에 서 가장 최신을 유지합니다.
+#### 선택된 저장소
+~~~groovy
+repositories {
+	mavenCentral()
+}
+~~~
+
+</br>
+
+# 특정 버전(메이저, 마이너)에서 최신 유지
+만약 특정 버전(메이저, 마이너)중에 최신을 가져오고 싶은 경우 아래와 같이 할 수 있습니다
+
+</br>
+
+version 을 기입 시
+version: 'x.x.+' 와 같이 '+'를 추가해주면 됩니다
+아래는 그 예시 입니다. 
+
+</br>
+
+#### 마이너 버전 중 최신 유지
+```groovy
+dependencies {
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.0.+'
+}
+```
+
+</br>
+
+#### 메이저 버전 중 최신 유지
+```groovy
+dependencies {
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.+'
+}
+```
