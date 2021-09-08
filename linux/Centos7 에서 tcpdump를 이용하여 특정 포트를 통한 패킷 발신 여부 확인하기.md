@@ -41,15 +41,30 @@ nmcli d
 
 
 # tcpdump 로 특정 포트를 통하여 발신되는 패킷 확인
-tcmdump 를 통하여 특정 포트를 통하여 발신되는 중인 패킷을 확인할 수 있습니다.
-저 같은 경우 rsyslog 를 외부 서버로 보내는 중이며 포트는 514, 프로토콜은 UDP 를 사용중입니다.
-
+이제 tcmdump 를 사용해서  특정 포트를 통하여 발신되는 중인 패킷을 확인할 수 있습니다.
+저 같은 경우 rsyslog 를 외부 서버로 보내는 중이며 포트는 45719 입니다
 </br>
 
 이때 패킷을 확인하는 방법은 아래와 같습니다.
 ~~~shell
-tcpdump -i ens160 udp port 514
+tcpdump -i ens160 src port 45719
 ~~~
+
+## tcpdump 로 특정 IP로 발신 또는 수신되는 패킷 확인
+
+### 특정 IP로 부터 수신되는 패킷을 확인할 경우
+~~~shell
+tcpdump -i ens160 src XXX.XXX.XXX.XXX
+~~~
+### 특정 IP로 송신되는 패킷을 확인할 경우
+~~~shell
+tcpdump -i ens160 dst XXX.XXX.XXX.XXX
+~~~
+
+## 추가적으로 더 다양한 tcpdump 명령의 예
+아래 링크의 블로그에 더 많은 trcpdump 명령의 예가 존재하니 참고하시면 감사하겠습니다.
+
+https://mkil.tistory.com/482
 
 
 
